@@ -3,6 +3,9 @@ const userModel = require("../model/user");
 const adminModel = require("../model/admin");
 
 const router = Router();
+router.get("/", async (req, res) => {
+  res.send("server good work");
+});
 
 router.post("/users", async (req, res) => {
   try {
