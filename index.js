@@ -40,4 +40,4 @@ async function start() {
     console.log(err);
   }
 }
-// start();
+start();
