@@ -29,7 +29,7 @@ app.use(express.json());
 app.use("/", homeRouts);
 
 const PORT = process.env.PORT || 8000;
-const HOST = "192.168.213.250";
+const HOST = "192.168.213.27";
 
 async function start() {
   try {
