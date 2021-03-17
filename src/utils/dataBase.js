@@ -6,7 +6,7 @@ const Sequelize = require("sequelize");
 
 const SCHEMA_NAME = "sp_nod";
 const USER_NAME = "sp_nod";
-const PASSWORD = "m15N89BC65ng'";
+const PASSWORD = "m15N89BC65ng";
 
 const sequelize = new Sequelize(SCHEMA_NAME, USER_NAME, PASSWORD, {
   // host: "localhost",
