@@ -29,13 +29,13 @@ app.use(express.json());
 app.use("/", homeRouts);
 
 const PORT = process.env.PORT || 8000;
+const HOST = "192.168.213.250";
 
 async function start() {
   try {
     await sequelize.sync();
-    app.listen(PORT, () => {
-      console.log(`Server run... PORT:${PORT}`);
-    });
+    app.listen(PORT, HOST);
+    console.log(`Server run... PORT:${PORT}, HOST:${HOST}`);
   } catch (err) {
     console.log(err);
   }
