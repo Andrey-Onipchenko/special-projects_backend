@@ -30,13 +30,18 @@ app.use("/", homeRouts);
 
 const PORT = process.env.PORT || 8000;
 
-async function start() {
-  try {
-    await sequelize.sync();
-    app.listen(PORT);
-    console.log(`Server run... PORT:${PORT}`);
-  } catch (err) {
-    console.log(err);
-  }
-}
-start();
+// async function start() {
+//   try {
+//     await sequelize.sync();
+//     app.listen(PORT, () => {
+//       console.log(`Server run... PORT:${PORT}`);
+//     });
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+// start();
+sequelize.sync();
+app.listen(PORT, () => {
+  console.log(`Server run... PORT:${PORT}`);
+});
