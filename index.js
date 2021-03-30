@@ -1,43 +1,32 @@
 const express = require("express");
 var cors = require("cors");
-const homeRouts = require("./src/routes/home");
-const sequelize = require("./src/utils/dataBase");
-const session = require("express-session");
-const MySQLStore = require("express-mysql-session")(session);
-const sessionOptions = require("./src/utils/session-options");
 const bodyParser = require("body-parser");
-const app = express();
-app.use(cors());
+const sequelize = require("./src/utils/dataBase");
+const config = require("./src/utils/env");
 
-const sessionStore = new MySQLStore(sessionOptions);
-// app.use(express.urlencoded({ extended: false }));
+const hutorokEaster = require("./src/routes/hutorokEaster");
+const bot = require("./src/tgBot/bot");
+const app = express();
+
+app.use(cors());
 app.use(
   bodyParser.urlencoded({
     extended: false,
   })
 );
-app.use(
-  session({
-    key: "auth",
-    secret: "some secret value",
-    resave: false,
-    saveUninitialized: false,
-    store: sessionStore,
-  })
-);
 app.use(express.json());
-app.use("/", homeRouts);
-
-const PORT = process.env.PORT || 8000;
+app.use("/api/hutorok/easter/", hutorokEaster);
 
 async function start() {
   try {
     await sequelize.sync();
-    app.listen(PORT, () => {
-      console.log(`Server run... PORT:${PORT}`);
+    app.listen(config.PORT, () => {
+      console.log(`Server run mod ${config.MOD}... PORT:${config.PORT}`);
     });
   } catch (err) {
     console.log(err);
   }
 }
+
 start();
+bot.launch();

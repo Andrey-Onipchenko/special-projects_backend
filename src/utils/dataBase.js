@@ -1,16 +1,12 @@
 const Sequelize = require("sequelize");
+const config = require("./env");
 
-// const SCHEMA_NAME = "post";
-// const USER_NAME = "andrey";
-// const PASSWORD = "123q123q";
-
-const SCHEMA_NAME = "sp_nod";
-const USER_NAME = "sp_nod";
-const PASSWORD = "m15N89BC65ng";
+const SCHEMA_NAME = config.DBNAME;
+const USER_NAME = config.DBUSER;
+const PASSWORD = config.DBPASS;
 
 const sequelize = new Sequelize(SCHEMA_NAME, USER_NAME, PASSWORD, {
-  // host: "localhost",
-  host: "192.168.213.250",
+  host: config.DBHOST,
   dialect: "mysql",
 });
 
