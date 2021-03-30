@@ -7,8 +7,12 @@ const config = require("./src/utils/env");
 const hutorokEaster = require("./src/routes/hutorokEaster");
 const bot = require("./src/tgBot/bot");
 const app = express();
+var corsOptions = {
+  origin: ["http://localhost:8080"],
+  optionsSuccessStatus: 200,
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(
   bodyParser.urlencoded({
     extended: false,
