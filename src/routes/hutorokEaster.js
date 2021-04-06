@@ -3,7 +3,7 @@ const userModel = require("../model/user");
 
 const router = Router();
 router.get("/", async (req, res) => {
-  res.send("server good work");
+  res.send("server good work 06.04");
 });
 
 router.post("/new", async (req, res) => {

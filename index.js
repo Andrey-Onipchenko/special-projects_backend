@@ -8,7 +8,7 @@ const hutorokEaster = require("./src/routes/hutorokEaster");
 const bot = require("./src/tgBot/bot");
 const app = express();
 var corsOptions = {
-  origin: ["http://localhost:8080", "https://pascha.smak.ua/"],
+  origin: ["https://pascha.smak.ua", "http://localhost:8080"],
   optionsSuccessStatus: 200,
 };
 
