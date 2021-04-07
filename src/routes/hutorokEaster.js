@@ -3,12 +3,14 @@ const userModel = require("../model/user");
 
 const router = Router();
 router.get("/", async (req, res) => {
-  res.send("server good work 06.04");
+  res.send("server good work 07.04");
 });
 
 router.post("/new", async (req, res) => {
   try {
     const { name, phone } = req.body;
+    console.log("name", name);
+    console.log("phone", phone);
     const user = await userModel.findOne({ where: { phone } });
     if (user) {
       res.json({
