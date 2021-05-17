@@ -1,3 +1,5 @@
+// https://back-sp.umh.com.ua/api/
+
 const express = require("express");
 var cors = require("cors");
 const bodyParser = require("body-parser");
@@ -5,6 +7,7 @@ const sequelize = require("./src/utils/dataBase");
 const config = require("./src/utils/env");
 
 const hutorokEaster = require("./src/routes/hutorokEaster");
+const huawei = require("./src/routes/huawei");
 const bot = require("./src/tgBot/bot");
 const app = express();
 var corsOptions = {
@@ -20,6 +23,7 @@ app.use(
 );
 app.use(express.json());
 app.use("/api/hutorok/easter/", hutorokEaster);
+app.use("/api/huawei/freebuds/", huawei);
 
 async function start() {
   try {
