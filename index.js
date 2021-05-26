@@ -11,7 +11,11 @@ const huawei = require("./src/routes/huawei");
 const bot = require("./src/tgBot/bot");
 const app = express();
 var corsOptions = {
-  origin: ["https://pascha.smak.ua", "http://localhost:8080"],
+  origin: [
+    "https://pascha.smak.ua",
+    "http://localhost:8080",
+    "https://huawei.vgorode.ua/",
+  ],
   optionsSuccessStatus: 200,
 };
 
