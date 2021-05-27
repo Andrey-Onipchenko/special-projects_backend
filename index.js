@@ -14,7 +14,7 @@ var corsOptions = {
   origin: [
     "https://pascha.smak.ua",
     "http://localhost:8080",
-    "https://huawei.vgorode.ua/",
+    "https://huawei.vgorode.ua",
   ],
   optionsSuccessStatus: 200,
 };

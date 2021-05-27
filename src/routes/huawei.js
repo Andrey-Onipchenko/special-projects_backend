@@ -3,7 +3,7 @@ const userHuawei = require("../model/userHuawei");
 
 const router = Router();
 router.get("/", async (req, res) => {
-  res.send("server good work huawei 17.05.21");
+  res.send("server good work huawei 27.05.21");
 });
 
 router.post("/new", async (req, res) => {
